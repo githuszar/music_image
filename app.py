@@ -1,14 +1,23 @@
 # Certifique-se de instalar todas as dependências com:
 # pip install streamlit requests pandas pillow numpy matplotlib
 
+
 import os
+
+# Verifica se matplotlib está instalado e instala se necessário
+try:
+    import matplotlib.pyplot as plt
+except ModuleNotFoundError:
+    os.system('pip install matplotlib')
+    import matplotlib.pyplot as plt
+
 import random
 import requests
 import pandas as pd
 import streamlit as st
 from PIL import Image, ImageDraw
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 # Configuração inicial
 CLIENT_ID = "e983ab76967541819658cb3126d9f3df"
