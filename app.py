@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # Configuração inicial
 CLIENT_ID = "e983ab76967541819658cb3126d9f3df"
 CLIENT_SECRET = "4f4d1a7a3697434db2a0edc2c484f80c"
-REDIRECT_URI = "http://localhost:8501/callback"
+REDIRECT_URI = "https://musicimage.streamlit.app/callback"
 AUTH_URL = "https://accounts.spotify.com/api/token"
 API_BASE_URL = "https://api.spotify.com/v1"
 
