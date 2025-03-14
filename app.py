@@ -8,8 +8,9 @@ import numpy as np
 # Verifica se matplotlib está instalado e importa, caso contrário, exibe erro
 try:
     import matplotlib.pyplot as plt
-except ModuleNotFoundError:
-    st.error("⚠️ Erro: O módulo 'matplotlib' não está instalado. Certifique-se de que todas as dependências estão instaladas corretamente.")
+except ImportError:
+    st.error("⚠️ Erro: O módulo 'matplotlib' não está instalado corretamente.")
+    st.warning("Tente rodar 'pip install matplotlib' no seu ambiente local ou confira o arquivo 'requirements.txt'.")
     st.stop()
 
 # Configuração inicial
