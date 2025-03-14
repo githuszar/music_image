@@ -5,13 +5,16 @@ import streamlit as st
 from PIL import Image, ImageDraw
 import numpy as np
 
-# Verifica se matplotlib está instalado e importa, caso contrário, exibe erro
+# Verifica se matplotlib está instalado e tenta importar
 try:
     import matplotlib.pyplot as plt
 except ImportError:
-    st.error("⚠️ Erro: O módulo 'matplotlib' não está instalado corretamente.")
-    st.warning("Tente rodar 'pip install matplotlib' no seu ambiente local ou confira o arquivo 'requirements.txt'.")
-    st.stop()
+    os.system("pip install matplotlib")
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        st.error("⚠️ Erro: O módulo 'matplotlib' não pôde ser instalado automaticamente.")
+        st.stop()
 
 # Configuração inicial
 CLIENT_ID = "e983ab76967541819658cb3126d9f3df"
